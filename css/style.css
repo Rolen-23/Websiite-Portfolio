@@ -172,6 +172,7 @@ a {
     font-size: 2rem;
 }
 
+
 .about {
     display: flex;
     align-items: center;
@@ -201,6 +202,7 @@ a {
    padding: 0;
    display: grid;
    gap: 0.6rem;
+   
 }
 
 .quick-facts strong {
@@ -230,6 +232,11 @@ a {
     overflow: hidden;
     border-bottom: 1px solid var(--border);
     padding: 2.5rem 0;
+    
+}
+
+.project.reverse {
+    flex-direction: row-reverse; /* Flips the image to the right side */
 }
 
 .project:last-child {
@@ -237,7 +244,7 @@ a {
 }
 
 .project-thumb {
-    width: 320px;
+    width: 350px;
     border-radius: var(--radius);
     overflow: hidden;
 }
@@ -395,6 +402,127 @@ a {
 }
 
 
+
+.section-padding {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--text);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-title .highlight {
+    color: var(--blue);
+}
+
+.featured-project {
+    display: flex;
+    gap: 3rem;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.featured-project .project-thumb {
+    margin-left: 35%;
+    flex: 1 1 200px;
+    
+}
+
+.featured-project  {
+    flex: 1 1 400px
+}
+
+.featured-project h3 {
+    color: var(--blue);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.cta-section {
+    text-align: center;
+    background-color: var(--bg-panel);
+    border-radius: var(--radius);
+    margin-bottom: 4rem;
+    border: 1px solid var(--border);
+}
+
+.cta-section h2 {
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    margin-bottom: 2rem;
+}
+
+/* --- ABOUT PAGE CARDS --- */
+.card-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    flex: 1 1 300px;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+}
+
+.info-card h3 {
+    color: var(--text);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+/* --- PROJECT PAGE DETAILS --- */
+.project-details {
+    /* Float clearfix trick */
+    overflow: hidden; 
+}
+
+.project-details h3 {
+    color: var(--blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    margin-top: 1.5rem;
+}
+
+.project-details p {
+    margin-top: 0;
+}
+
+/* --- SKILLS PAGE TWEAKS --- */
+.pill i {
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+.cert-desc {
+    font-size: 0.85rem !important;
+    color: #888; /* Slightly muted text for descriptions */
+    margin-top: 0.5rem !important;
+    line-height: 1.4;
+}
+
+
+
 @media (max-width: 720px) {
     .hero,
     .about {
@@ -403,21 +531,20 @@ a {
         padding: 3rem 0;
     }
 
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .about-text ul.quick-facts {
-        text-align: left;
-    }
-
+     /* Project layouts stack on mobile */
     .project .project-thumb,
     .project.reverse .project-thumb {
         float: none;
-        margin: 0 0 var(--gap-md) 0;
+        margin: 0 auto 1.5rem auto;
         width: 100%;
+        max-width: 400px;
     }
 
+    .project, .featured-project {
+        text-align: center;
+    }
+
+    /* Nav */
     .site-header .container {
         justify-content: center;
     }
